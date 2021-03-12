@@ -11,7 +11,7 @@ DWORD WINAPI MoveMint(HMODULE hModule) {
 
     void** pVTable = *reinterpret_cast<void***>(DirectXDevice);
     oEndScene = (EndScene)DetourFunction((PBYTE)pVTable[42], (PBYTE)Hooked_EndScene);
-
+    //
     GetOffsets(gameModule);
 
     while (!(GetAsyncKeyState(VK_END))) {
