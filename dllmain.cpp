@@ -19,7 +19,6 @@ DWORD WINAPI MoveMint(HMODULE hModule) {
         Sleep(1);
     }
 
-    FreeConsole();
     MessageBox(NULL, "Successfully un-injected", "FrmeZ", NULL);
     FreeLibraryAndExitThread(hModule, 0);
 }
@@ -27,8 +26,6 @@ DWORD WINAPI MoveMint(HMODULE hModule) {
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
     switch (ul_reason_for_call) {
         case DLL_PROCESS_ATTACH:
-            AllocConsole();
-            freopen("CONOUT$", "w", stdout);
             DisableThreadLibraryCalls(hModule);
             CreateThread(0, 0, (LPTHREAD_START_ROUTINE)MoveMint, hModule, 0, 0);
             break;

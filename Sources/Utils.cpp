@@ -9,8 +9,7 @@ bool IsEntityMoving(uintptr_t entity) {
     return false;
 }
 
-bool IsEntityFlashed(uintptr_t entity)
-{
+bool IsEntityFlashed(uintptr_t entity) {
     float flashDur = *(float*)(entity + m_flFlashDuration);
     if (flashDur >= 2.5f) {
         return true;
@@ -24,8 +23,7 @@ float GetDistance(uintptr_t originEntity, uintptr_t destinationEntity) {
     return sqrt(pow(myLoc.x - oppLoc.x, 2) + pow(myLoc.y - oppLoc.y, 2) + pow(myLoc.z - oppLoc.z, 2)) * 0.0254f;
 }
 
-int GetWeaponID(uintptr_t gameModule, uintptr_t entity)
-{
+int GetWeaponID(uintptr_t gameModule, uintptr_t entity) {
     int weaponID = *(int*)(entity + m_hActiveWeapon);
     int weaponEntity = *(int*)(gameModule + dwEntityList + ((weaponID & 0xFFF) - 1) * 0x10);
     if (weaponEntity != NULL) {
