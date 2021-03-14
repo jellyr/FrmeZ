@@ -3,7 +3,7 @@
 int hitShots = 0;
 
 void Hitmarker(HMODULE hModule, uintptr_t localPlayer) {
-    int totalHitShots = *(int*)(localPlayer + TOTALHITSONSERVER);
+    int totalHitShots = *(int*)(localPlayer + m_totalHitsOnServer);
     if (totalHitShots > hitShots) {
         PlaySound("hitmarker", hModule, SND_RESOURCE | SND_ASYNC);
         hitShots = totalHitShots;

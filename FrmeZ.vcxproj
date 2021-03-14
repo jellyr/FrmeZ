@@ -162,7 +162,9 @@
     <ClInclude Include="Header\Hacks.h" />
     <ClInclude Include="Header\Includes.h" />
     <ClInclude Include="Header\Menu.h" />
-    <ClInclude Include="Header\Offsets.h" />
+    <ClInclude Include="Header\NetvarManager.h" />
+    <ClInclude Include="Header\Netvars.h" />
+    <ClInclude Include="Header\Signatures.h" />
     <ClInclude Include="Header\Patternscanning.h" />
     <ClInclude Include="Header\Utils.h" />
   </ItemGroup>
@@ -171,7 +173,11 @@
     <ClCompile Include="Hacks\AutoTaser.cpp" />
     <ClCompile Include="Hacks\Bhop.cpp" />
     <ClCompile Include="Hacks\Hitmarker.cpp" />
+    <ClCompile Include="Hacks\Knifebot.cpp" />
     <ClCompile Include="Sources\Menu.cpp" />
+    <ClCompile Include="Sources\NetvarManager.cpp" />
+    <ClCompile Include="Sources\Netvars.cpp" />
+    <ClCompile Include="Sources\Signatures.cpp" />
     <ClCompile Include="Sources\Patternscanning.cpp" />
     <ClCompile Include="Sources\Utils.cpp" />
   </ItemGroup>

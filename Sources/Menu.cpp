@@ -1,8 +1,8 @@
 #include "../Header/Includes.h"
 
 EndScene oEndScene;
-
 ID3DXFont* Font;
+uintptr_t DirectXDevice = NULL;
 
 D3DCOLOR MenuBackgroundColor = D3DCOLOR_ARGB(255, 50, 50, 50);
 D3DCOLOR MenuHighLightedColor = D3DCOLOR_ARGB(255, 90, 90, 90);
@@ -11,10 +11,11 @@ D3DCOLOR TextColor = D3DCOLOR_ARGB(255, 255, 255, 255);
 D3DCOLOR White = D3DCOLOR_ARGB(255, 255, 255, 255);
 D3DCOLOR Black = D3DCOLOR_ARGB(255, 0, 0, 0);
 
-bool showMenu = false;
+bool showMenu = true;
 bool bhop = false;
 bool hitmarker = false;
 bool autotaser = false;
+bool knifebot = false;
 int MenuX = 500;
 int MenuY = 500;
 
@@ -81,6 +82,7 @@ void DrawMenu(IDirect3DDevice9* pDevice) {
 		bhop = CheckBox(MenuX + 5, MenuY + 5, bhop, "Bhop", pDevice, Mouse);
 		hitmarker = CheckBox(MenuX + 5, MenuY + 20, hitmarker, "Hitmarker", pDevice, Mouse);
 		autotaser = CheckBox(MenuX + 5, MenuY + 35, autotaser, "Auto Taser", pDevice, Mouse);
+		knifebot = CheckBox(MenuX + 5, MenuY + 50, knifebot, "Knifebot", pDevice, Mouse);
 	}
 }
 

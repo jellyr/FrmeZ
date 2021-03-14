@@ -2,10 +2,12 @@
 
 typedef HRESULT(__stdcall* EndScene)(IDirect3DDevice9* pDevice);
 extern EndScene oEndScene;
+extern uintptr_t DirectXDevice;
 
 extern bool bhop;
 extern bool hitmarker;
 extern bool autotaser;
+extern bool knifebot;
 
 void SolidRect(int x, int y, int w, int h, D3DCOLOR color, IDirect3DDevice9* pDevice);
 void BorderedRect(int x, int y, int w, int h, int thiccness, D3DCOLOR color, IDirect3DDevice9* pDevice);

@@ -1,6 +1,8 @@
 #include "../Header/Includes.h"
 
-void AutoTaser(uintptr_t gameModule, uintptr_t localPlayer) {
+int knifes[] = { 41, 42, 59, 74, 500, 503, 505, 506, 507, 508, 509, 512, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 525 };
+
+void Knifebot(uintptr_t gameModule, uintptr_t localPlayer) {
 	int crosshairID = *(int*)(localPlayer + m_iCrosshairId);
 	if ((crosshairID == 0) || (crosshairID >= 64)) {
 		return;
@@ -18,11 +20,15 @@ void AutoTaser(uintptr_t gameModule, uintptr_t localPlayer) {
 	if (IsEntityFlashed(localPlayer)) {
 		return;
 	}
-	if (GetWeaponID(gameModule, localPlayer) != W_TASER) {
+	if (std::find(knifes, knifes + (sizeof(knifes) / sizeof(knifes[0])), GetWeaponID(gameModule, localPlayer)) == std::end(knifes)) {
 		return;
 	}
-	if (GetDistance(localPlayer, entity) >= 3.5f) {
+	if (GetDistance(localPlayer, entity) >= 1.60f) {
 		return;
 	}
-	Shoot(gameModule);
+	if (entityHealth < 55) {
+		Shoot2(gameModule);
+	} else {
+		Shoot(gameModule);
+	}
 }

@@ -37,7 +37,13 @@
     <ClInclude Include="Header\Patternscanning.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Offsets.h">
+    <ClInclude Include="Header\Signatures.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Netvars.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\NetvarManager.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,6 +67,18 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Sources\Patternscanning.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Hacks\Knifebot.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Signatures.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\Netvars.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Sources\NetvarManager.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

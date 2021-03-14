@@ -15,5 +15,6 @@ int GetEntityTeam(uintptr_t entity);
 int GetEntityHealth(uintptr_t entity);
 
 void Shoot(uintptr_t gameModule);
+void Shoot2(uintptr_t gameModule);
 
 uintptr_t GetLocalPlayer(uintptr_t gameModule);
