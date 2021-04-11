@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -93,6 +93,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -158,31 +159,30 @@
     <Resource Include="Resources\hitmarker.res" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\detours.h" />
-    <ClInclude Include="Header\Hacks.h" />
+    <ClInclude Include="Features\ESP.h" />
+    <ClInclude Include="GUI\Draw.h" />
     <ClInclude Include="Header\Includes.h" />
-    <ClInclude Include="Header\Menu.h" />
-    <ClInclude Include="Header\NetvarManager.h" />
-    <ClInclude Include="Header\Netvars.h" />
-    <ClInclude Include="Header\Signatures.h" />
-    <ClInclude Include="Header\Patternscanning.h" />
-    <ClInclude Include="Header\Utils.h" />
+    <ClInclude Include="Utils\D3D9Device.h" />
+    <ClInclude Include="Utils\Geometrics.h" />
+    <ClInclude Include="Utils\Hooks.h" />
+    <ClInclude Include="Utils\NetvarManager.h" />
+    <ClInclude Include="Utils\Offsets.h" />
+    <ClInclude Include="Utils\Patternscanning.h" />
+    <ClInclude Include="Utils\TrampHook.h" />
+    <ClInclude Include="Utils\Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Hacks\AutoTaser.cpp" />
-    <ClCompile Include="Hacks\Bhop.cpp" />
-    <ClCompile Include="Hacks\Hitmarker.cpp" />
-    <ClCompile Include="Hacks\Knifebot.cpp" />
-    <ClCompile Include="Sources\Menu.cpp" />
-    <ClCompile Include="Sources\NetvarManager.cpp" />
-    <ClCompile Include="Sources\Netvars.cpp" />
-    <ClCompile Include="Sources\Signatures.cpp" />
-    <ClCompile Include="Sources\Patternscanning.cpp" />
-    <ClCompile Include="Sources\Utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="Resources\detours.lib" />
+    <ClCompile Include="Features\ESP.cpp" />
+    <ClCompile Include="GUI\Draw.cpp" />
+    <ClCompile Include="Utils\D3D9Device.cpp" />
+    <ClCompile Include="Utils\Geometrics.cpp" />
+    <ClCompile Include="Utils\Hooks.cpp" />
+    <ClCompile Include="Utils\NetvarManager.cpp" />
+    <ClCompile Include="Utils\Offsets.cpp" />
+    <ClCompile Include="Utils\Patternscanning.cpp" />
+    <ClCompile Include="Utils\TrampHook.cpp" />
+    <ClCompile Include="Utils\Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

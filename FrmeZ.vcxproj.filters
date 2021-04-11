@@ -12,6 +12,15 @@
     <Filter Include="Headerdateien">
       <UniqueIdentifier>{c208b0bd-1834-463c-b144-9bbbddb7e5b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{2fc9a7fe-b6c1-48b8-804a-04fd75b447af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{0217e6b3-cfa9-454a-9faa-e123c999e909}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features">
+      <UniqueIdentifier>{8084e8d9-135a-4d50-b1e5-05828a3ff0e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\hitmarker.res">
@@ -19,72 +28,73 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\Hacks.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Header\Includes.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Utils.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Utils\D3D9Device.h">
+      <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Menu.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Utils\NetvarManager.h">
+      <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\detours.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Utils\Offsets.h">
+      <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Patternscanning.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Utils\Patternscanning.h">
+      <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Signatures.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Utils\TrampHook.h">
+      <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Netvars.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="Utils\Utils.h">
+      <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\NetvarManager.h">
-      <Filter>Headerdateien</Filter>
+    <ClInclude Include="GUI\Draw.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Hooks.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Geometrics.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\ESP.h">
+      <Filter>Features</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Utils.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Utils\D3D9Device.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Hacks\Bhop.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Utils\NetvarManager.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Hacks\Hitmarker.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Utils\Offsets.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Hacks\AutoTaser.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Utils\Patternscanning.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Menu.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Utils\TrampHook.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Patternscanning.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Utils\Utils.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Hacks\Knifebot.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="GUI\Draw.cpp">
+      <Filter>GUI</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Signatures.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Utils\Hooks.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\Netvars.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Utils\Geometrics.cpp">
+      <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Sources\NetvarManager.cpp">
-      <Filter>Quelldateien</Filter>
+    <ClCompile Include="Features\ESP.cpp">
+      <Filter>Features</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="Resources\detours.lib">
-      <Filter>Ressourcendateien</Filter>
-    </Library>
   </ItemGroup>
 </Project>

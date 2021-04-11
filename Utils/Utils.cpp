@@ -1,8 +1,8 @@
 #include "../Header/Includes.h"
 
 bool IsEntityMoving(uintptr_t entity) {
-    Vector3 pVel = *(Vector3*)(entity + m_vecVelocity);
-    float pMoving = pVel.x + pVel.y + pVel.z;
+    Vector3 vel = *(Vector3*)(entity + m_vecVelocity);
+    float pMoving = vel.x + vel.y + vel.z;
     if (pMoving != 0.0f) {
         return true;
     }
@@ -17,13 +17,33 @@ bool IsEntityFlashed(uintptr_t entity) {
     return false;
 }
 
+bool IsEntityValid(uintptr_t entity) {
+    if (entity == NULL) {
+        return false;
+    }
+    if (entity == ESP::Variables::localPlayer) {
+        return false;
+    }
+    if (GetEntityHealth(entity) <= 0) {
+        return false;
+    }
+    if (*(bool*)(entity + m_bDormant)) {
+        return false;
+    }
+    return true;
+}
+
+bool IsClientInGame() {
+    return (*(int*)(*(uintptr_t*)(engineModule + dwClientState) + dwClientState_State) == 6);
+}
+
 float GetDistance(uintptr_t originEntity, uintptr_t destinationEntity) {
     Vector3 myLoc = *(Vector3*)(originEntity + m_vecOrigin);
     Vector3 oppLoc = *(Vector3*)(destinationEntity + m_vecOrigin);
-    return sqrt(pow(myLoc.x - oppLoc.x, 2) + pow(myLoc.y - oppLoc.y, 2) + pow(myLoc.z - oppLoc.z, 2)) * 0.0254f;
+    return (float)(sqrt(pow(myLoc.x - oppLoc.x, 2) + pow(myLoc.y - oppLoc.y, 2) + pow(myLoc.z - oppLoc.z, 2)) * 0.0254f);
 }
 
-int GetWeaponID(uintptr_t gameModule, uintptr_t entity) {
+int GetWeaponID(uintptr_t entity) {
     int weaponID = *(int*)(entity + m_hActiveWeapon);
     int weaponEntity = *(int*)(gameModule + dwEntityList + ((weaponID & 0xFFF) - 1) * 0x10);
     if (weaponEntity != NULL) {
@@ -47,20 +67,6 @@ int GetEntityHealth(uintptr_t entity) {
     return *(int*)(entity + m_iHealth);
 }
 
-void Shoot(uintptr_t gameModule) {
-    Sleep(20);
-    *(int*)(gameModule + dwForceAttack) = 5;
-    Sleep(20);
-    *(int*)(gameModule + dwForceAttack) = 4;
-}
-
-void Shoot2(uintptr_t gameModule) {
-    Sleep(20);
-    *(int*)(gameModule + dwForceAttack2) = 5;
-    Sleep(20);
-    *(int*)(gameModule + dwForceAttack2) = 4;
-}
-
-uintptr_t GetLocalPlayer(uintptr_t gameModule) {
-    return *(uintptr_t*)(gameModule + dwLocalPlayer);
+Vector3 GetEntityVelocity(uintptr_t entity) {
+    return *(Vector3*)(entity + m_vecVelocity);
 }

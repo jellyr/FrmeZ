@@ -4,4 +4,4 @@
 #define getBits( x )    (INRANGE((x&(~0x20)),'A','F') ? ((x&(~0x20)) - 'A' + 0xa) : (INRANGE(x,'0','9') ? x - '0' : 0))
 #define getByte( x )    (getBits(x[0]) << 4 | getBits(x[1]))
 
-DWORD FindPattern(std::string moduleName, std::string pattern, int offset = 0, int extra = 0);
+DWORD FindPattern(std::string moduleName, std::string pattern, bool relative, int offset = 0, int extra = 0);
