@@ -9,5 +9,6 @@ namespace ESP {
 		inline uintptr_t localPlayer;
 		inline Vector3 angle;
 		inline float viewMatrix[16];
+		inline int totalHitShots;
 	}
 }

@@ -1,5 +1,7 @@
 #include "Header/Includes.h"
 
+HMODULE handleModule;
+
 DWORD WINAPI MoveMint(HMODULE hModule) {
     static void* d3d9Device[119];
     static BYTE EndSceneBytes[7]{ 0 };
@@ -23,6 +25,7 @@ DWORD WINAPI MoveMint(HMODULE hModule) {
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
     switch (ul_reason_for_call) {
         case DLL_PROCESS_ATTACH:
+            handleModule = hModule;
             //AllocConsole();
             //freopen("CONOUT$", "w", stdout);
             DisableThreadLibraryCalls(hModule);

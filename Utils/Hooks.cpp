@@ -13,7 +13,6 @@ HRESULT APIENTRY Hooked_EndScene(LPDIRECT3DDEVICE9 pDevice) {
 	DrawMenu(pDevice);
 
 	if (IsClientInGame()) {
-		
 		ESP::Esp(pDevice);
 		ESP::RecoilCrosshair(pDevice);
 		ESP::Hitmarker(pDevice);

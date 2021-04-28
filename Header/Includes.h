@@ -10,14 +10,14 @@
 #include <string>
 #include <d3d9.h>
 #include <d3dx9.h>
+#include "../Utils/D3D9Device.h"
 #include "../Utils/Patternscanning.h"
 #include "../Utils/NetvarManager.h"
 #include "../Utils/Utils.h"
-#include "../Utils/Offsets.h"
-#include "../Utils/D3D9Device.h"
 #include "../Utils/TrampHook.h"
 #include "../Utils/Hooks.h"
 #include "../Utils/Geometrics.h"
+#include "../Utils/Offsets.h"
 #include "../Features/ESP.h"
 #include "../GUI/Draw.h"
 
@@ -66,19 +66,3 @@
 #define W_M249 14
 #define W_NEGEV 28
 #define W_TASER 31
-
-#define MENUBORDERLONG 704
-#define MENUBORDERSHORT 354
-#define MENULONG 700
-#define MENUSHORT 350
-#define MARGIN 2
-#define CHECKBOXBORDERRECT 14
-#define CHECKBOXRECT 10
-#define SLIDERBORDERLONG 54
-#define SLIDERBORDERSHORT 14
-#define SLIDERLONG 50
-#define SLIDERSHORT 10
-#define BUTTONBORDERLONG 42
-#define BUTTONBORDERSHORT 14
-#define BUTTONLONG 38
-#define BUTTONSHORT 10
